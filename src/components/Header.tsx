@@ -1,6 +1,14 @@
 import Link from 'next/link'
 import React from 'react'
-import { Sheet, SheetContent, SheetTrigger } from './ui/sheet'
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet"
+
 import { Menu } from 'lucide-react'
 
 const Header = () => {
@@ -25,11 +33,13 @@ const Header = () => {
         <div className="flex items-center gap-4">
           
           <Sheet>
-            <SheetTrigger>
-              <Menu size={24} />
-            </SheetTrigger>
-            <SheetContent>
-              <ul className="flex flex-col gap-3">
+  <SheetTrigger> <Menu size={24}  /></SheetTrigger>
+  <SheetContent>
+    <SheetHeader>
+      <SheetTitle></SheetTitle>
+      <SheetDescription>
+        
+              <ul className="flex flex-col gap-3 text-white ">
                 <li>
                   <Link href={"/"}>Home</Link>
                 </li>
@@ -40,8 +50,11 @@ const Header = () => {
                   <Link href={"/contact"}>Contact</Link>
                 </li>
               </ul>
-            </SheetContent>
-          </Sheet>
+      </SheetDescription>
+    </SheetHeader>
+  </SheetContent>
+</Sheet>
+
         </div>
       </div>
     </div>
